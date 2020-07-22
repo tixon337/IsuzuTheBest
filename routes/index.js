@@ -1,5 +1,5 @@
-import express from 'express';
-import {ConfigurationModel} from '../DataBase/Database.js'
+const express  = require('express')
+const {ConfigurationModel}  = require('../DataBase/Database.js');
 const router = express.Router();
 
 router.get('/', function(req, res){
@@ -7,4 +7,4 @@ router.get('/', function(req, res){
   res.render('main', configs);
 })
 
-export default router;
+module.exports = router;
