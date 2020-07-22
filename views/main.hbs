@@ -1,0 +1,15 @@
+<div class="header-top">
+  <ul class="top-admin">
+    <li>Админ
+      <a href="/login"></a>
+    </li>
+  </ul>
+  <div class="main-part">
+    {{#each homeConfig}}
+    {{this.engine}}
+    {{this.transmision}}
+    {{this.configuration}}
+    {{this.color}}
+    {{/each}}
+  </div>
+</div>
