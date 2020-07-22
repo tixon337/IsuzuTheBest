@@ -1,4 +1,4 @@
-const mongoose = "mongoose";
+const mongoose = require("mongoose");
 
 const connectionAddress =
   "mongodb://localhost/mongodb+srv://isuzu:isuzu@isuzudata.3oevy.mongodb.net/IsuzuData?retryWrites=true&w=majority";
