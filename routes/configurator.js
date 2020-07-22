@@ -1,5 +1,5 @@
-import express from 'express';
-import {  EngineModel, CarcassModel, TransmissionModel, ColorModel, ConfigurationModel,} from '../DataBase/Database'
+const express  = require('express')
+const { EngineModel, CarcassModel, TransmissionModel, ColorModel, ConfigurationModel}  = require('../DataBase/Database.js');
 const router = express.Router();
 
 
@@ -13,7 +13,5 @@ const data = { engine, carcass, transmission, color, configuration }
   res.render('configuration', data);
 })
 
+module.exports = router;
 
-
-
-export default router;
