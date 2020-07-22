@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = "mongoose";
 
 const connectionAddress =
   "mongodb://localhost/mongodb+srv://isuzu:isuzu@isuzudata.3oevy.mongodb.net/IsuzuData?retryWrites=true&w=majority";
@@ -96,10 +96,7 @@ const Color = new mongoose.Schema({
 });
 
 const Configuration = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
+  name: String,
   engine: Engine,
   carcass: Carcass,
   transmission: Transmission,
@@ -122,25 +119,14 @@ const Configuration = new mongoose.Schema({
 });
 
 const Сompetitors = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  engine: {
-    type: String,
-    required: true,
-  },
-  carcass: {
-    type: String,
-    required: true,
-  },
-  transmission: {
-    type: String,
-    required: true,
-  },
-  color: {
-    type: String,
-    required: true,
+  name: String,
+  engine: Engine,
+  carcass: Carcass,
+  transmission: Transmission,
+  color: Color,
+  flag: {
+    type: Boolean,
+    default: false,
   },
   numberofseats: String,
   groundclearance: String,
@@ -163,7 +149,7 @@ const ColorModel = mongoose.model("Color", Color);
 const ConfigurationModel = mongoose.model("Configuration", Configuration);
 const СompetitorsModel = mongoose.model("Сompetitors", Сompetitors);
 
-export default {
+module.exports = {
   AdminsModel,
   EngineModel,
   CarcassModel,
