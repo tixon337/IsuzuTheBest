@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-const connectionAddress = "mongodb://localhost/PH2Mongo";
+const connectionAddress =
+  "mongodb://localhost/mongodb+srv://isuzu:isuzu@isuzudata.3oevy.mongodb.net/IsuzuData?retryWrites=true&w=majority";
 mongoose.connect(connectionAddress, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
