@@ -1,8 +1,8 @@
 const express = require("express");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
-// const session = require("express-session");
 const path = require("path");
+// const session = require("express-session");
 // const FileStore = require("session-file-store")(session);
 // const { cookiesCleaner } = require("./auth");
 // const dbConnection = require("./DataBase/Database");
@@ -11,7 +11,12 @@ const path = require("path");
 // const adminRouter = require("./routes/admin");
 // const anotherCarRouter = require("./routes/anothercar")
 // const configuratorRouter = require("./routes/configurator")
-// const indexRouter = require("./routes/index")
+const adminRouter = require("./routes/admin");
+const anothercarRouter = require("./routes/anothercar");
+const configuratorRouter = require("./routes/configurator");
+const indexRouter = require("./routes/index");
+const optionsRouter = require("./routes/options");
+
 // const optionsRouter = require("./routes/options")
 // const useErrorHandlers = require("./middleware/error-handlers");
 
@@ -19,7 +24,12 @@ const app = express();
 
 
 // Подключаем импортированные маршруты с определенным url префиксом.
-// app.use("/", indexRouter);
+app.use("/admin", adminRouter);
+app.use("/anothercar", anothercarRouter);
+app.use("/configurator", configuratorRouter);
+app.use("/", indexRouter);
+app.use("/options", optionsRouter);
+
 
 // useErrorHandlers(app);
 
@@ -51,7 +61,6 @@ const app = express();
   app.use(express.static(path.join(__dirname, '..', "public")));
 
   // Подключаем views(hbs)
-  app.set("views", path.join(__dirname, '..', "views"));
   app.set("view engine", "hbs");
 
-  app.listen(3000, () => console.log('khkjhj'));
+  app.listen(3000, () => console.log('run on 3000'));
