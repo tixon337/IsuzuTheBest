@@ -6,7 +6,7 @@ const {
   ColorModel,
   ConfigurationModel,
 } = require("../DataBase/Database.js");
-const{sessionChecker} = require('../middleware/auth.js')
+const { sessionChecker } = require("../middleware/auth.js");
 
 const router = express.Router();
 

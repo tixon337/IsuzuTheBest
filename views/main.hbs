@@ -1,16 +1,28 @@
-<div class="header-top">
-  <button class="config-button"><a href="/configurator">Конфигуратор</a></button>
-  <div class="main-part">
-    {{#each homeConfig}}
-    <div>
-      <h2>{{this.name}}</h2>
-      <div>{{this.engine}}</div>
-      <div>{{this.transmission}}</div>
-      <div>{{this.color}}</div>
-    </div>
-    {{/each}}
+<nav class="navbar navbar-dark bg-dark">
+  <a href="/" class="navbar-brand">Главная</a>
+  <form class="form-inline">
+    <button class="btn btn-danger" type="button"><a class="config-login" href="/login">Войти</button></a>
+  </form>
+</nav>
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">ISUZU D-MAX</h1>
+    <p class="lead">Конфигуратор ISUZU</p>
+    <button type="button" class="btn btn-danger"><a class='config-a' href="/configurator">Конфигуратор</a></button>
   </div>
-  <li>
-    <a href="/login">Зайти как админ</a>
-  </li>
+</div>
+<div class="header-top">
+  <div class="d">
+    {{#each homeConfig}}
+    <div class="c">
+      <h2>{{this.name}}</h2>
+    </div>
+    <div>{{this.engine.name}} {{this.engine.value}} {{this.engine.power}} {{this.engine.enginePistons}}</div>
+    <div>{{this.carcass.name}} {{this.carcass.type}}</div>
+    <div>{{this.transmission.name}} {{this.transmission.type}} {{this.transmission.gearstages}}</div>
+    <div>{{this.color.name}}</div>
+  </div>
+  {{/each}}
 </div>
