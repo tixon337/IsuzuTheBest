@@ -1,10 +1,15 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a href="/" class="navbar-brand">Главная</a>
+  <form class="form-inline">
+    <button class="btn btn-danger" type="button"><a class="config-login" href="/login">Войти</a></button>
+  </form>
+</nav>
+
 <script defer src="js/application.js"></script>
 <div class="main-part">
-
-  <a href="/">Домашняя страница</a>
-
   <div class="main-page-white">
-    <h2>Конфигуратор</h2>
+    <h2 class="config-h2">Конфигуратор</h2>
+    <hr>
     <div class="config-form">
       <form id='configForm' action="/" method="POST">
         <div>Выберите двигатель</div>
@@ -36,7 +41,8 @@
     </div>
     <div class="sum"> Сумма: {{sum}} </div>
 
-    <a href="/comparison">Сравнить с другими предложениями</a>
+    <button type="button" class="btn btn-danger"><a class='comparison-text' href="/comparison">Сравнить с другими
+        предложениями</a></button>
   </div>
 </div>
 </body>
