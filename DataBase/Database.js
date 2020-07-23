@@ -197,7 +197,7 @@ async function addColor() {
     creator: admin._id,
   });
 }
-addColor();
+// addColor();
 // addCarcass();
 // addTransmission();
 // addAdmin();
