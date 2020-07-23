@@ -1,35 +1,38 @@
+<script defer src="js/application.js"></script>
 <div class="main-part">
 
   <h2>Конфигуратор</h2>
 
   <div class="config-form">
-    <form action="/" method="POST">
+    <form id='configForm' action="/" method="POST">
       <div>Выберите двигатель</div>
-      <select>
+      <select class='select' name="chooseEngine" id="engine">
         {{#each engine}}
         <option value="engine">{{name}}</option>
         {{/each}}
       </select>
       <div>Выберите каркас</div>
-      <select>
+      <select class='select' name="chooseCarcass" id="carcass">
         {{#each carcass}}
         <option value="carcass">{{name}}</option>
         {{/each}}
       </select>
       <div>Выберите трансмиссию</div>
-      <select>
+      <select class='select' name="chooseTransmission" id="transmission">
         {{#each transmission}}
         <option value="transmission">{{name}}</option>
         {{/each}}
       </select>
       <div>Выберите цвет</div>
-      <select>
+      <select class='select' name="chooseColor" id="color">
         {{#each color}}
         <option value="color">{{name}}</option>
+        <img src={{urlimage}}>
         {{/each}}
       </select>
     </form>
   </div>
+  <div class="sum"> Сумма: {{sum}} </div>
 
   <a href="/comparison">Сравнить с другими предложениями</a>
 </div>
