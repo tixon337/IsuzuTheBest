@@ -1,16 +1,12 @@
-
 const express = require('express');
 const router = express.Router();
 const { sessionChecker } = require('../middleware/auth.js');
 const { AdminsModel } = require('../DataBase/Database.js');
 
 
-router.get("/", sessionChecker, (req, res) => {
-  res.render("admin");
-});
 
 router.get('/', sessionChecker, (req, res) => {
-  console.log(req.session.user)
+  // console.log(req.session.user)
   res.render('admin', { superadmin: req.session.user.superadmin })
   
 })
@@ -31,6 +27,11 @@ router.post('/add', sessionChecker, async (req, res) => {
     const path = '/admin/add'
     res.render('error', { error, path })
   }
+})
+
+router.get('/delete', sessionChecker, async (req, res) => {
+const users = await AdminsModel.find()
+  res.render('deleteUser', {users})
 })
 
 
