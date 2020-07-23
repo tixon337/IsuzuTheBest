@@ -31,6 +31,7 @@ sum.innerText = `Стоимость: 623852 Руб.`
     let responseObj = await response.json();
 
     sum.innerText = `Стоимость: ${responseObj.price} Руб.`;
+    document.getElementById("total").value = responseObj.price
   });
 
 
