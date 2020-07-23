@@ -1,3 +1,4 @@
+
 const sum = document.querySelector(".sum");
 const selected = document.querySelectorAll('.select')
 const buttonSum = document.getElementById('buttonSum')
@@ -49,3 +50,7 @@ sum.innerText = `Стоимость: 623852 Руб.`
 
 
 
+document.getElementById("addoption").addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log(event);
+});

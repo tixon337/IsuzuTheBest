@@ -28,6 +28,10 @@ const Admins = new mongoose.Schema({
     type: String,
     required: true,
   },
+  superadmin: {
+    type: Boolean,
+    default: false,
+  },
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now },
 });
@@ -194,7 +198,6 @@ async function addColor() {
     creator: admin._id,
   });
 }
-
 
 async function addConfiguration() {
   let admin = await AdminsModel.findOne({ name: "Tixon" });

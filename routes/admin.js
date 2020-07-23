@@ -1,9 +1,13 @@
+
 const express = require('express');
 const router = express.Router();
 const { sessionChecker } = require('../middleware/auth.js');
 const { AdminsModel } = require('../DataBase/Database.js');
 
 
+router.get("/", sessionChecker, (req, res) => {
+  res.render("admin");
+});
 
 router.get('/', sessionChecker, (req, res) => {
   console.log(req.session.user)
