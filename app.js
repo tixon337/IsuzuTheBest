@@ -22,8 +22,6 @@ const optionsRouter = require("./routes/options");
 
 const app = express();
 
-// useErrorHandlers(app);
-
 // Body POST запросов.
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -31,25 +29,11 @@ app.use(express.json());
 // initialize cookie-parser to allow us access the cookies stored in the browser.
 app.use(cookieParser());
 
-// initialize express-session to allow us track the logged-in user across sessions.
-// app.use(
-//   session({
-//     store: new FileStore(),
-//     key: "user_sid",
-//     secret: "anything here",
-//     resave: false,
-//     saveUninitialized: false,
-//     cookie: {
-//       expires: 600000
-//     }
-//   })
-// );
-// app.use(cookiesCleaner);
-
 // Подключаем статику
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, '..', "public")));
 
 // Подключаем views(hbs)
+app.set("view engine", "hbs");
 
 // Подключаем импортированные маршруты с определенным url префиксом.
 app.use("/admin", adminRouter);
@@ -60,4 +44,23 @@ app.use("/options", optionsRouter);
 
 app.set("view engine", "hbs");
 
-app.listen(3000, () => console.log("run on 3000"));
+// useErrorHandlers(app);
+
+
+  // initialize express-session to allow us track the logged-in user across sessions.
+  // app.use(
+  //   session({
+  //     store: new FileStore(),
+  //     key: "user_sid",
+  //     secret: "anything here",
+  //     resave: false,
+  //     saveUninitialized: false,
+  //     cookie: {
+  //       expires: 600000
+  //     }
+  //   })
+  // );
+  // app.use(cookiesCleaner);
+
+
+  app.listen(3000, () => console.log('run on 3000'));
