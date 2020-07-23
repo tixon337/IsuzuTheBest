@@ -1,26 +1,45 @@
 <div class="header-top">
   <ul class="top-admin">
     <li>
-     <h3><a href="/options">Добавить опцию</a></h3> 
+      <h3><a href="/options">Добавить опцию</a></h3>
     </li>
     <li>
-     <h3><a href="/options">Изменить опцию</a></h3> 
+      <h3><a href="/options">Изменить опцию</a></h3>
     </li>
     <li>
-     <h3><a href="/options">Удалить опцию</a></h3> 
+      <h3><a href="/options">Удалить опцию</a></h3>
+    </li>
+    <br />
+    <li>
+      <h3><a href="/anothercar">Добавить конкурента</a></h3>
     </li>
     <li>
-     <h3><a href="/anothercar">Добавить конкурента</a></h3> 
+      <h3><a href="/anothercar">Изменить конкурента</a></h3>
     </li>
     <li>
-     <h3><a href="/anothercar">Изменить конкурента</a></h3> 
+      <h3><a href="/anothercar">Удалить конкурента</a></h3>
+    </li>
+    <br />
+    <li>
+      <h3><a href="/anothercar">Добавить конфигурацию</a></h3>
     </li>
     <li>
-     <h3><a href="/anothercar">Удалить конкурента</a></h3> 
+      <h3><a href="/anothercar">Изменить конфигурацию</a></h3>
     </li>
+    <li>
+      <h3><a href="/anothercar">Удалить конфигурацию</a></h3>
+    </li>
+    <br />
+    {{#if superadmin}}
+    <li>
+      <h3><a href="/admin/add">Добавить администратора</a></h3>
+    </li>
+    <li>
+      <h3><a href="/anothercar">Удалить администратора</a></h3>
+    </li>
+    {{/if}}
   </ul>
 </div>
 
-<h5><a href="/">Домашняя страница</a></h5> 
+<h5><a href="/">Домашняя страница</a></h5>
 <h5><a href="/logout">Выйти</a></h5>
-
