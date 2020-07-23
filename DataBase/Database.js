@@ -195,6 +195,7 @@ async function addColor() {
   });
 }
 
+
 async function addConfiguration() {
   let admin = await AdminsModel.findOne({ name: "Tixon" });
   let engine = await EngineModel.findOne();
@@ -226,6 +227,7 @@ async function addConfiguration() {
 
   await СompetitorsModel.insertMany(configs);
 }
+
 // addColor();
 // addCarcass();
 // addTransmission();
