@@ -1,49 +1,53 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a href="/" class="navbar-brand">Главная</a>
+  <form class="form-inline">
+    <button class="btn btn-danger" type="button"><a class="config-login" href="/login">Войти</a></button>
+  </form>
+</nav>
+
 <script defer src="js/application.js"></script>
 <div class="main-part">
-
-  <a href="/">Домашняя страница</a>
-
-  <div class="config-form">
-    <form id='configForm' action="/comparison" method="POST">
-      <div>Выберите двигатель</div>
-      <select class='select' name="engine" id="engine">
-        {{#each engine}}
-        <option value="{{name}}">{{name}}</option>
-        {{/each}}
-      </select>
-      <div>Выберите каркас</div>
-      <select class='select' name="carcass" id="carcass">
-        {{#each carcass}}
-        <option value="{{name}}">{{name}}</option>
-        {{/each}}
-      </select>
-      <div>Выберите трансмиссию</div>
-      <select class='select' name="transmission" id="transmission">
-        {{#each transmission}}
-        <option value="{{name}}">{{name}}</option>
-        {{/each}}
-      </select>
-      <div>Выберите цвет</div>
-      <select class='select' name="color" id="color">
-        {{#each color}}
-        <option value="{{name}}">{{name}}</option>
-        {{/each}}
-      </select>
-      {{!-- <a href="/comparison">Сравнить с другими предложениями</a> --}}
-      <br><br>
-      <button id="buttonSum">Узнать стоимость комплектации</button>
-      <br>
-      <br>
-      <button type="submit" id="buttonCompare">Сравнить с другими предложениями</button>
-      <input hidden=true type="text" id="total" name= "price" value='1834558'></input>
-      <input hidden=true type="text" id="total" name= "name" value="Isuzu Dmax"></input>
-      <br>
-      <br>
-      <div class="sum"> Стоимость: 1834558 руб. </div>
-    </form>
-{{!}}
-  </div>
-  
+  <div class="main-page-white">
+    <h2 class="config-h2">Конфигуратор</h2>
+    <hr>
+    <div class="config-form">
+      <form id='configForm' action="/comparison" method="POST">
+        <div>Выберите двигатель</div>
+        <select class='select' name="engine" id="engine">
+          {{#each engine}}
+          <option value="{{name}}">{{name}}</option>
+          {{/each}}
+        </select>
+        <div>Выберите каркас</div>
+        <select class='select' name="carcass" id="carcass">
+          {{#each carcass}}
+          <option value="{{name}}">{{name}}</option>
+          {{/each}}
+        </select>
+        <div>Выберите трансмиссию</div>
+        <select class='select' name="transmission" id="transmission">
+          {{#each transmission}}
+          <option value="{{name}}">{{name}}</option>
+          {{/each}}
+        </select>
+        <div>Выберите цвет</div>
+        <select class='select' name="color" id="color">
+          {{#each color}}
+          <option value="{{name}}">{{name}}</option>
+          {{/each}}
+        </select>
+        {{!-- <a href="/comparison">Сравнить с другими предложениями</a> --}}
+        <br><br>
+        <button id="buttonSum">Узнать стоимость комплектации</button>
+        <br>
+        <div class="sum"> Стоимость: 1834558 руб. </div>
+        <br>
+        <button type="submit" id="buttonCompare">Сравнить с другими предложениями</button>
+        <input hidden=true type="text" id="total" name="price" value='1834558'></input>
+        <input hidden=true type="text" id="total" name="name" value="Isuzu Dmax"></input>
+        <br>
+        <br>
+      </form>
+    </div>
   </div>
 </div>
-</body>
