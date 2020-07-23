@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const connectionAddress =
-  "mongodb://localhost/mongodb+srv://isuzu:isuzu@isuzudata.3oevy.mongodb.net/IsuzuData?retryWrites=true&w=majority";
+  "mongodb+srv://isuzu:isuzu@isuzudata.3oevy.mongodb.net/IsuzuData?retryWrites=true&w=majority";
 mongoose.connect(connectionAddress, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -148,6 +148,60 @@ const TransmissionModel = mongoose.model("Transmission", Transmission);
 const ColorModel = mongoose.model("Color", Color);
 const ConfigurationModel = mongoose.model("Configuration", Configuration);
 const СompetitorsModel = mongoose.model("Сompetitors", Сompetitors);
+
+async function addAdmin() {
+  await AdminsModel.create({
+    name: "Tixon",
+    login: "admin",
+    password: "admin",
+    position: "dev",
+  });
+}
+
+async function addEngine() {
+  let admin = await AdminsModel.findOne({ name: "Tixon" });
+  await EngineModel.create({
+    name: "3-литровый дизельный двигатель",
+    volume: 3,
+    power: 177,
+    enginePistons: 6,
+    type: "Дизельный",
+    creator: admin._id,
+  });
+}
+
+async function addTransmission() {
+  let admin = await AdminsModel.findOne({ name: "Tixon" });
+  await TransmissionModel.create({
+    name: "МКПП",
+    type: "Механическая",
+    gearstages: 6,
+    creator: admin._id,
+  });
+}
+
+async function addCarcass() {
+  let admin = await AdminsModel.findOne({ name: "Tixon" });
+  await CarcassModel.create({
+    name: "Полуторная",
+    type: String,
+    creator: admin._id,
+  });
+}
+
+async function addColor() {
+  let admin = await AdminsModel.findOne({ name: "Tixon" });
+  await ColorModel.create({
+    name: "SPLASH WHITE",
+    urlimage: "https://www.isuzu-dmax.ru/static/slider/terra/white/1.jpg",
+    creator: admin._id,
+  });
+}
+addColor();
+// addCarcass();
+// addTransmission();
+// addAdmin();
+// addEngine();
 
 module.exports = {
   AdminsModel,
