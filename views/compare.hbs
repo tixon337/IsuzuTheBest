@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div>Результаты сравнения</div>
-<div class="card-group"> 
+<nav class="navbar navbar-dark bg-dark">
+  <a href="/" class="navbar-brand">Главная</a>
+  <form class="form-inline">
+    <button class="btn btn-danger" type="button"><a class="config-login" href="/login">Войти</a></button>
+  </form>
+</nav>
+
+<div>
+  <br>
+  <h2 class="results-text">Результаты сравнения</h2>
+</div>
+<br>
+<div class="card-group">
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Марка, модель</h5>
@@ -17,7 +20,7 @@
       <p class="card-text">Цвет</p>
       <p class="card-text">Стоимость</p>
     </div>
-  </div>  
+  </div>
   {{#each compet}}
   <div class="card">
     <div class="card-body">
@@ -32,7 +35,3 @@
   {{/each}}
 
 </div>
-
-
-</body>
-</html>

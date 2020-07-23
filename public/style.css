@@ -231,3 +231,7 @@ select {
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.results-text {
+  text-align: center;
+}
