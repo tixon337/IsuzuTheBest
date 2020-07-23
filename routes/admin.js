@@ -1,12 +1,13 @@
 const express  = require('express')
 const router = express.Router();
-
-// const sessionChecker = require('../middleware/auth')
-
+const{sessionChecker} = require('../middleware/auth.js')
 
 
-router.get('/', (req, res) => {
+router.get('/',sessionChecker, (req, res) => {
+  res.render('admin')
+})
 
+router.post('/', sessionChecker, (req, res) => {
   res.render('admin')
 })
 

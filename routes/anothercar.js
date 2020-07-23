@@ -1,21 +1,21 @@
 const express  = require('express')
-// const sessionChecker = require('../middleware/auth')
+const{sessionChecker} = require('../middleware/auth.js')
 
 const router = express.Router();
 
-router.get('/',  (req, res) => {
+router.get('/', sessionChecker,  (req, res) => {
   res.render('addCompetitors')
 })
 
-router.post('/',  (req, res) => {
+router.post('/', sessionChecker, (req, res) => {
   res.render('addCompetitors')
 })
 
-router.put('/', (req, res) => {
+router.put('/', sessionChecker, (req, res) => {
   res.render('changeCompetitors')
 })
 
-router.delete('/',  (req, res) => {
+router.delete('/', sessionChecker, (req, res) => {
   res.render('deleteCompetitors')
 })
 
