@@ -1,12 +1,13 @@
 <h5>Выберите пользователя</h5>
 
 <div>
+  <form action="/admin/delete" method="post"  value={{this.login}}>
+  <select name='user'>
   {{#each users}}
-  <form action="/admin/delete" method="post" name='user' value={{this.login}}>
-  {{this.name}}
-  {{this.login}}
-  <button>Удалить</button>
+    <option value="{{this.login}}">{{this.name}}</option>
   {{/each}}
+  </select>
+    <input type="submit" value="Удалить" />
   </form>
-
+<div> <a href="/admin">Отмена</a>
 </div>
