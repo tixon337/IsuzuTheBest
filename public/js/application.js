@@ -8,11 +8,11 @@ let engine = selected[0].options[selected[0].selectedIndex].text;
 let carcass = selected[1].options[selected[1].selectedIndex].text;
 let transmission = selected[2].options[selected[2].selectedIndex].text;
 let color = selected[3].options[selected[3].selectedIndex].text;
-sum.innerText = `Стоимость: 623852 Руб.`
 
 
 
-  buttonSum.addEventListener("click", async () => {    
+  buttonSum.addEventListener("click", async (event) => { 
+    event.preventDefault();   
     let engine = selected[0].options[selected[0].selectedIndex].text;
     let carcass = selected[1].options[selected[1].selectedIndex].text;
     let transmission = selected[2].options[selected[2].selectedIndex].text;

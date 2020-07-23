@@ -3,6 +3,10 @@ const {СompetitorsModel} = require("../DataBase/Database.js");
 
 const router = express.Router();
 
+router.get('/', (req, res) => {
+  res.redirect("./configurator")
+})
+
 router.post('/', async (req, res) => {
  try {
    const competitors = await СompetitorsModel.find();
