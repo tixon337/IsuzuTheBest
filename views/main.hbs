@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark bg-dark">
   <a href="/" class="navbar-brand">Главная</a>
   <form class="form-inline">
-    <button class="btn btn-danger" type="button"><a class="config-login" href="/login">Войти</button></a>
+    <button class="btn btn-danger" type="button"><a class="config-login" href="/login">Войти</a></button>
   </form>
 </nav>
 
@@ -13,16 +13,19 @@
     <button type="button" class="btn btn-danger"><a class='config-a' href="/configurator">Конфигуратор</a></button>
   </div>
 </div>
-<div class="header-top">
-  <div class="d">
-    {{#each homeConfig}}
-    <div class="c">
-      <h2>{{this.name}}</h2>
+
+{{!-- отрисовка конфигураций --}}
+<div class="card-group">
+  {{#each homeConfig}}
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{this.name}}</h5>
+      <p class="card-text">{{this.engine.name}} {{this.engine.value}} {{this.engine.power}}
+        {{this.engine.enginePistons}}</p>
+      <p class="card-text">{{this.carcass.name}} {{this.carcass.type}}</p>
+      <p class="card-text">{{this.transmission.name}} {{this.transmission.type}} {{this.transmission.gearstages}}</p>
+      <p class="card-text">{{this.color.name}}</p>
     </div>
-    <div>{{this.engine.name}} {{this.engine.value}} {{this.engine.power}} {{this.engine.enginePistons}}</div>
-    <div>{{this.carcass.name}} {{this.carcass.type}}</div>
-    <div>{{this.transmission.name}} {{this.transmission.type}} {{this.transmission.gearstages}}</div>
-    <div>{{this.color.name}}</div>
   </div>
   {{/each}}
 </div>

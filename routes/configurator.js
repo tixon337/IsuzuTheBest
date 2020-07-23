@@ -25,4 +25,19 @@ router.get("/", async function (req, res) {
   }
 });
 
+router.post("/getSum", async function (req, res) {
+  try {
+    const configuration = await ConfigurationModel.find({
+      "engine.name": req.body.engine,
+      "carcass.name": req.body.carcass,
+      'transmission.name': req.body.transmission,
+      'color.name': req.body.color,
+    });
+    console.log(configuration.length);
+    res.json({ price: configuration[0].price });
+  } catch (error) {
+    res.json({ error: "Такой комплектации не существует" });
+  }
+});
+
 module.exports = router;
