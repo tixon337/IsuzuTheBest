@@ -1,3 +1,21 @@
-.randomClass {
-  color: red;
+a {
+  text-decoration: none !important;
 }
+
+.config-a {
+  color: white;
+}
+
+.config-a:hover {
+  color: white;
+}
+
+.config-login {
+  color: white;
+}
+
+.config-login:hover {
+  color: white;
+}
+
+
