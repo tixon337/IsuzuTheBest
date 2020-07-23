@@ -10,8 +10,6 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const data = {};
-    console.log(data.engine);
     res.render("addVariantOpt");
   } catch (error) {
     console.log(error);
@@ -59,7 +57,38 @@ router.post("/add", async (req, res) => {
 
 router.post("/addoptions", async (req, res) => {
   console.log(req.body);
-  res.redirect("/options");
+  if (req.body.color) {
+    await ColorModel.create({
+      name: req.body.color,
+      creator: req.session.user._id,
+    });
+  }
+  if (req.body.engineName) {
+    await EngineModel.create({
+      name: req.body.color,
+      volume: req.body.engineVolume,
+      enginePistons: req.body.engineCount,
+      power: req.body.enginePower,
+      type: req.body.engineType,
+      creator: req.session.user._id,
+    });
+  }
+  if (req.body.carcassName) {
+    await CarcassModel.create({
+      name: req.body.carcassName,
+      type: req.body.carcassType,
+      creator: req.session.user._id,
+    });
+  }
+  if (req.body.transName) {
+    await TransmissionModel.create({
+      name: req.body.transName,
+      type: req.body.transType,
+      gearstages: req.body.transCount,
+      creator: req.session.user._id,
+    });
+  }
+  res.redirect("/admin");
 });
 
 router.put("/", (req, res) => {
