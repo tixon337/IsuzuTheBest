@@ -22,6 +22,18 @@ const optionsRouter = require("./routes/options");
 
 const app = express();
 
+// Body POST запросов.
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// initialize cookie-parser to allow us access the cookies stored in the browser.
+app.use(cookieParser());
+
+// Подключаем статику
+app.use(express.static(path.join(__dirname, '..', "public")));
+
+// Подключаем views(hbs)
+app.set("view engine", "hbs");
 
 // Подключаем импортированные маршруты с определенным url префиксом.
 app.use("/admin", adminRouter);
@@ -33,14 +45,6 @@ app.use("/options", optionsRouter);
 
 // useErrorHandlers(app);
 
-
-
-  // Body POST запросов.
-  app.use(express.urlencoded({ extended: true }));
-  app.use(express.json());
-
-  // initialize cookie-parser to allow us access the cookies stored in the browser.
-  app.use(cookieParser());
 
   // initialize express-session to allow us track the logged-in user across sessions.
   // app.use(
@@ -57,10 +61,5 @@ app.use("/options", optionsRouter);
   // );
   // app.use(cookiesCleaner);
 
-  // Подключаем статику
-  app.use(express.static(path.join(__dirname, '..', "public")));
-
-  // Подключаем views(hbs)
-  app.set("view engine", "hbs");
 
   app.listen(3000, () => console.log('run on 3000'));
