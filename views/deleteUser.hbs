@@ -1,0 +1,12 @@
+<h5>Выберите пользователя</h5>
+
+<div>
+  {{#each users}}
+  <form action="/admin/delete" method="post" name='user' value={{this.login}}>
+  {{this.name}}
+  {{this.login}}
+  <button>Удалить</button>
+  {{/each}}
+  </form>
+
+</div>
