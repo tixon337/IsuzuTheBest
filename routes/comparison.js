@@ -6,6 +6,7 @@ const router = express.Router();
 router.post('/', async (req, res) => {
  try {
    const competitors = await СompetitorsModel.find();
+
    competitors.sort(function (a, b) {
      if (a.price > b.price) {
         return 1;
@@ -15,16 +16,31 @@ router.post('/', async (req, res) => {
       }      
       return 0;     
     });
-    // console.log(competitors)    
-    const firstCompetitor = {engine: 'V8', transmission: "robot", carcass: "huge", price: "122328989"};
-   const secondCompetitor = {engine: 'V12', transmission: "robot", carcass: "huge", price: "1111111"};
-   let compet = [req.body, firstCompetitor, secondCompetitor]
-   res.render('compare', compet)
-   console.log(compet);
-  }  catch (error) { }
-  
-  // console.log(competitors); 
+    let index = 1;
+    while(competitors[index].price < req.body.price) {
+      index += 1;
+    }    
 
+   const firstCompetitor = {
+     name: competitors[index].name, 
+     engine: competitors[index].engine.name, 
+     transmission: competitors[index].transmission.name, 
+     carcass: competitors[index].carcass.name, 
+     color: "Белый", 
+     price: competitors[index].price
+    };
+
+   const secondCompetitor = { 
+    name: competitors[index-1].name, 
+     engine: competitors[index-1].engine.name, 
+     transmission: competitors[index-1].transmission.name, 
+     carcass: competitors[index-1].carcass.name, 
+     color: "Белый", 
+     price: competitors[index-1].price
+  };
+   let compet = [secondCompetitor,req.body, firstCompetitor]
+   res.render('compare', {compet})   
+  }  catch (error) { }
 })
 
 
