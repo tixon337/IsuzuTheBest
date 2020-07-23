@@ -6,9 +6,11 @@ const {
   ColorModel,
   ConfigurationModel,
 } = require("../DataBase/Database.js");
+const{sessionChecker} = require('../middleware/auth.js')
+
 const router = express.Router();
 
-router.get("/", async function (req, res) {
+router.get("/", sessionChecker, async function (req, res) {
   try {
     const engine = await EngineModel.find();
     const carcass = await CarcassModel.find();
