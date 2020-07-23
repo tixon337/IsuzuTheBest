@@ -126,3 +126,52 @@ input[type="password"]:placeholder,
 input[type="text"]:placeholder {
   color: #cccccc;
 }
+
+/* меню в админе */
+.vertical-menu {
+  margin: 15px;
+  width: 250px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.flex-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+
+/* .main-part {
+  background-color: #181818;
+  height: 700px;
+}
+
+.main-page-white {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  width: 360px;
+  border-radius: 10px;
+  margin: -50px 0 0 -100px;
+} */
