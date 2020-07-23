@@ -4,7 +4,7 @@
   <h2>Конфигуратор</h2>
 
   <div class="config-form">
-    <form id='configForm' action="/" method="POST">
+    <form id='configForm' action="/comparison" method="POST">
       <div>Выберите двигатель</div>
       <select class='select' name="chooseEngine" id="engine">
         {{#each engine}}
@@ -29,9 +29,13 @@
         <option value="color">{{name}}</option>
         {{/each}}
       </select>
+      {{!-- <a href="/comparison">Сравнить с другими предложениями</a> --}}
+      <button type="submit" id="buttonCompare">Сравнить с другими предложениями</button>
     </form>
+      <button id="buttonSum">Узнать стоимость комплектации</button>
+      <div class="sum"> Сумма: {{sum}} </div>
   </div>
-  <div class="sum"> Сумма: {{sum}} </div>
+  
 
-  <a href="/comparison">Сравнить с другими предложениями</a>
+  
 </div>
