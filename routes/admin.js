@@ -4,9 +4,18 @@ const { sessionChecker } = require('../middleware/auth.js')
 
 
 router.get('/', sessionChecker, (req, res) => {
-  console.log('Admin get')
   res.render('admin')
 })
+
+router.get('/add', sessionChecker, (req, res) => {
+  res.render('addAdmin')
+})
+
+router.post('/add', sessionChecker, (req, res) => {
+  res.render('addAdmin')
+})
+
+
 
 // router.post('/', sessionChecker, (req, res) => {
   
