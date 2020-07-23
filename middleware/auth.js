@@ -1,8 +1,10 @@
 function sessionChecker(req, res, next) {
   if (!req.session.user) {
+    console.log('checker if');
     res.redirect('/')
   }
   else {
+    console.log('checker else');
     next()
   }
 }

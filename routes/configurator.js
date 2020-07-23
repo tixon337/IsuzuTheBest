@@ -18,7 +18,7 @@ router.get("/", async function (req, res) {
     const color = await ColorModel.find();
     const configuration = await ConfigurationModel.find();
     const data = { engine, carcass, transmission, color, configuration };
-    // console.log(data.engine);
+
     res.render("configurator", data);
   } catch (error) {
     console.log(error);
