@@ -34,6 +34,13 @@ const users = await AdminsModel.find()
   res.render('deleteUser', {users})
 })
 
+router.post('/delete', sessionChecker, async (req, res) => {
+const user = req.body;
+const needUser = await AdminsModel.findOneAndRemove({login:user.user})
+
+  res.redirect('/success')
+})
+
 
 // router.post('/', sessionChecker, (req, res) => {
 
