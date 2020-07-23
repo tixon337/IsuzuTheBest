@@ -5,31 +5,32 @@
   <div class="config-form">
     <form action="/" method="POST">
       <div>Выберите двигатель</div>
-      <select>
+      <select name="chooseEngine" id="engine">
         {{#each engine}}
         <option value="engine">{{name}}</option>
         {{/each}}
       </select>
       <div>Выберите каркас</div>
-      <select>
+      <select name="chooseCarcass" id="carcass">
         {{#each carcass}}
         <option value="carcass">{{name}}</option>
         {{/each}}
       </select>
       <div>Выберите трансмиссию</div>
-      <select>
+      <select name="chooseTransmission"id="transmission">
         {{#each transmission}}
         <option value="transmission">{{name}}</option>
         {{/each}}
       </select>
       <div>Выберите цвет</div>
-      <select>
+      <select name="chooseColor" id="color">
         {{#each color}}
         <option value="color">{{name}}</option>
         {{/each}}
       </select>
     </form>
   </div>
+  <div class="sum"> Сумма: </div>
 
   <a href="/comparison">Сравнить с другими предложениями</a>
 </div>
