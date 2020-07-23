@@ -18,7 +18,7 @@
         {{/each}}
       </select>
       <div>Выберите трансмиссию</div>
-      <select class='select' name="chooseTransmission"id="transmission">
+      <select class='select' name="chooseTransmission" id="transmission">
         {{#each transmission}}
         <option value="transmission">{{name}}</option>
         {{/each}}
@@ -27,6 +27,7 @@
       <select class='select' name="chooseColor" id="color">
         {{#each color}}
         <option value="color">{{name}}</option>
+        <img src={{urlimage}}>
         {{/each}}
       </select>
     </form>
