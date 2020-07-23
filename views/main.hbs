@@ -1,16 +1,22 @@
 <div class="header-top">
   <ul class="top-admin">
-    <li>Админ
-      <a href="/login"></a>
+
+    <li>
+     <h1><a href="/configurator">Конфигуратор</a></h1> 
     </li>
   </ul>
   <button>Конфигуратор</button>
   <div class="main-part">
     {{#each homeConfig}}
-    {{this.engine}}
-    {{this.transmision}}
-    {{this.configuration}}
-    {{this.color}}
+  <div>
+    <h2>{{this.name}}</h2>
+    <div>{{this.engine}}</div>
+    <div>{{this.transmission}}</div>
+    <div>{{this.color}}</div>
+  </div>
     {{/each}}
   </div>
+      <li>
+      <a href="/login">Зайти как админ</a>
+    </li>
 </div>
