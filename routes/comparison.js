@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
       }      
       return 0;     
     });
-    console.log(competitors)    
+    // console.log(competitors)    
     const firstCompetitor = {engine: 'V8', transmission: "robot", carcass: "huge", price: "122328989"};
    const secondCompetitor = {engine: 'V12', transmission: "robot", carcass: "huge", price: "1111111"};
    let compet = [req.body, firstCompetitor, secondCompetitor]
