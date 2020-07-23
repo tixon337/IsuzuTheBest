@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const fake = require("faker");
 
 const connectionAddress =
   "mongodb+srv://isuzu:isuzu@isuzudata.3oevy.mongodb.net/IsuzuData?retryWrites=true&w=majority";
@@ -124,10 +125,6 @@ const Сompetitors = new mongoose.Schema({
   carcass: Carcass,
   transmission: Transmission,
   color: Color,
-  flag: {
-    type: Boolean,
-    default: false,
-  },
   numberofseats: String,
   groundclearance: String,
   carrying: Number,
@@ -197,11 +194,44 @@ async function addColor() {
     creator: admin._id,
   });
 }
-addColor();
+
+async function addConfiguration() {
+  let admin = await AdminsModel.findOne({ name: "Tixon" });
+  let engine = await EngineModel.findOne();
+  let carcass = await CarcassModel.find();
+  let trans = await TransmissionModel.find();
+  let color = await ColorModel.find();
+  let configs = [];
+
+  for (let j = 0; j < carcass.length; j++) {
+    for (let t = 0; t < trans.length; t++) {
+      for (let g = 0; g < color.length; g++) {
+        configs.push(
+          new СompetitorsModel({
+            name: "Конкурент " + fake.lorem.sentence(),
+            engine: engine,
+            carcass: carcass[j],
+            transmission: trans[t],
+            color: color[g],
+            numberofseats: 6,
+            groundclearance: fake.random.number(400),
+            carrying: fake.random.number(2000),
+            price: fake.random.number(4000000),
+            creator: admin._id,
+          })
+        );
+      }
+    }
+  }
+
+  await СompetitorsModel.insertMany(configs);
+}
+// addColor();
 // addCarcass();
 // addTransmission();
 // addAdmin();
 // addEngine();
+// addConfiguration();
 
 module.exports = {
   AdminsModel,
