@@ -1,4 +1,15 @@
-<div class="add-variant">
+<div>Добавить опции</div>
+<form action="/options/add" method="POST">
+  <select name="options" id="options">
+    <option value="engine">Двигатель</option>
+    <option value="carcass">Корпус</option>
+    <option value="transmission">Коробка передач</option>
+    <option value="color">Цвет</option>
+  </select>
+  <button type="submit" name="addoption" id="addoption">Добавить</button>
+</form>
+</div>
+{{!-- <div class="add-variant">
   <form action="/" method="POST">
     <div>Добавить опции</div>
     <br>
@@ -29,17 +40,11 @@
     <option value="color">Цвет</option>
     <input type="text" placeholder="Название">
     <button class="add">Добавить</button>
-    {{/if}}
-    {{!-- {{else if transmission}}
+    {{/if}} --}}
+{{!-- {{!-- {{else if transmission}}
       <option value="transmission">Трансмиссия</option>
       <input type="text" placeholder="Название">
       <input type="text" placeholder="Количество передач">
       <button class="add">Добавить</button>
       {{else color}}
-      <option value="color">Цвет</option>
-      <input type="text" placeholder="name">
-      <button class="add">Добавить</button>
-      {{/if}} --}}
-    </select>
-  </form>
-</div>
+======= --}}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>Результаты сравнения</div>
+<div class="card-group"> 
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Марка, модель</h5>
+      <p class="card-text">Двигатель</p>
+      <p class="card-text">Кузов</p>
+      <p class="card-text">Трансмиссия</p>
+      <p class="card-text">Цвет</p>
+      <p class="card-text">Стоимость</p>
+    </div>
+  </div>  
+  {{#each compet}}
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{this.name}}</h5>
+      <p class="card-text">{{this.engine}}</p>
+      <p class="card-text">{{this.carcass}}</p>
+      <p class="card-text">{{this.transmission}} </p>
+      <p class="card-text">{{this.color}}</p>
+      <p class="card-text">от {{this.price}} руб.</p>
+    </div>
+  </div>
+  {{/each}}
+
+</div>
+
+
+</body>
+</html>

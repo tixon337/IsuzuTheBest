@@ -11,38 +11,43 @@
     <h2 class="config-h2">Конфигуратор</h2>
     <hr>
     <div class="config-form">
-      <form id='configForm' action="/" method="POST">
+      <form id='configForm' action="/comparison" method="POST">
         <div>Выберите двигатель</div>
-        <select class='select' name="chooseEngine" id="engine">
+        <select class='select' name="engine" id="engine">
           {{#each engine}}
-          <option value="engine">{{name}}</option>
+          <option value="{{name}}">{{name}}</option>
           {{/each}}
         </select>
         <div>Выберите каркас</div>
-        <select class='select' name="chooseCarcass" id="carcass">
+        <select class='select' name="carcass" id="carcass">
           {{#each carcass}}
-          <option value="carcass">{{name}}</option>
+          <option value="{{name}}">{{name}}</option>
           {{/each}}
         </select>
         <div>Выберите трансмиссию</div>
-        <select class='select' name="chooseTransmission" id="transmission">
+        <select class='select' name="transmission" id="transmission">
           {{#each transmission}}
-          <option value="transmission">{{name}}</option>
+          <option value="{{name}}">{{name}}</option>
           {{/each}}
         </select>
         <div>Выберите цвет</div>
-        <select class='select' name="chooseColor" id="color">
+        <select class='select' name="color" id="color">
           {{#each color}}
-          <option value="color">{{name}}</option>
+          <option value="{{name}}">{{name}}</option>
           {{/each}}
         </select>
+        {{!-- <a href="/comparison">Сравнить с другими предложениями</a> --}}
+        <br><br>
+        <button id="buttonSum">Узнать стоимость комплектации</button>
+        <br>
+        <div class="sum"> Стоимость: 1834558 руб. </div>
+        <br>
+        <button type="submit" id="buttonCompare">Сравнить с другими предложениями</button>
+        <input hidden=true type="text" id="total" name="price" value='1834558'></input>
+        <input hidden=true type="text" id="total" name="name" value="Isuzu Dmax"></input>
+        <br>
+        <br>
       </form>
-      <img src={{urlimage}}>
     </div>
-    <div class="sum"> Сумма: {{sum}} </div>
-
-    <button type="button" class="btn btn-danger"><a class='comparison-text' href="/comparison">Сравнить с другими
-        предложениями</a></button>
   </div>
 </div>
-</body>

@@ -168,7 +168,7 @@ input[type="text"]:placeholder {
 .main-page-white {
   background-color: lightgray;
   width: 350px;
-  height: 470px;
+  height: 600px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -204,4 +204,30 @@ select {
   font-size: 20px;
   margin-top: 1px;
   margin-bottom: 2px;
+}
+
+#buttonSum {
+  background-color: #fa8602; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#buttonCompare {
+  background-color: red; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
