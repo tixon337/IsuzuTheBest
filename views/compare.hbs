@@ -7,20 +7,30 @@
 </head>
 <body>
   <div>Результаты сравнения</div>
-<div class="card-group">  
+<div class="card-group"> 
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Марка, модель</h5>
+      <p class="card-text">Двигатель</p>
+      <p class="card-text">Кузов</p>
+      <p class="card-text">Трансмиссия</p>
+      <p class="card-text">Цвет</p>
+      <p class="card-text">Стоимость</p>
+    </div>
+  </div>  
   {{#each compet}}
   <div class="card">
-    {{!-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
     <div class="card-body">
       <h5 class="card-title">{{this.name}}</h5>
-      <p class="card-text">{{this.engine.name}} {{this.engine.value}} {{this.engine.power}}
-        {{this.engine.enginePistons}}</p>
-      <p class="card-text">{{this.carcass.name}} {{this.carcass.type}}</p>
-      <p class="card-text">{{this.transmission.name}} {{this.transmission.type}} {{this.transmission.gearstages}}</p>
-      <p class="card-text">{{this.color.name}}</p>
+      <p class="card-text">{{this.engine}}</p>
+      <p class="card-text">{{this.carcass}}</p>
+      <p class="card-text">{{this.transmission}} </p>
+      <p class="card-text">{{this.color}}</p>
+      <p class="card-text">от {{this.price}} руб.</p>
     </div>
   </div>
   {{/each}}
+
 </div>
 
 
