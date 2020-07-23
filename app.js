@@ -42,6 +42,7 @@ app.use("/configurator", configuratorRouter);
 app.use("/", indexRouter);
 app.use("/options", optionsRouter);
 
+app.set("view engine", "hbs");
 
 // useErrorHandlers(app);
 

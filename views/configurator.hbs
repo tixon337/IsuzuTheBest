@@ -1,22 +1,35 @@
-  <div class="main-part">
+<div class="main-part">
 
-<h2>Конфигуратор</h2>
+  <h2>Конфигуратор</h2>
 
-  <div>
-
-    <div>{{engine}}</div>
-    <div>{{carcass}}</div>
-    <div>{{transmission}}</div>
-    <div>{{color}}</div>
-
-    <div>{{#each configuration}}<div>
-    <h2>{{this.name}}</h2>
-    <div>{{this.engine}}</div>
-    <div>{{this.transmission}}</div>
-    <div>{{this.color}}</div>
-    </div>{{/each}}</div>
-
+  <div class="config-form">
+    <form action="/" method="POST">
+      <div>Выберите двигатель</div>
+      <select>
+        {{#each engine}}
+        <option value="engine">{{name}}</option>
+        {{/each}}
+      </select>
+      <div>Выберите каркас</div>
+      <select>
+        {{#each carcass}}
+        <option value="carcass">{{name}}</option>
+        {{/each}}
+      </select>
+      <div>Выберите трансмиссию</div>
+      <select>
+        {{#each transmission}}
+        <option value="transmission">{{name}}</option>
+        {{/each}}
+      </select>
+      <div>Выберите цвет</div>
+      <select>
+        {{#each color}}
+        <option value="color">{{name}}</option>
+        {{/each}}
+      </select>
+    </form>
   </div>
-<a href="">Сравнить с другими предложениями</a>
-  </div>
 
+  <a href="/comparison">Сравнить с другими предложениями</a>
+</div>
