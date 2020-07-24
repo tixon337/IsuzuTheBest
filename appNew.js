@@ -8,6 +8,7 @@ const configuratorRouter = require("./routes/configurator");
 const indexRouter = require("./routes/index");
 const optionsRouter = require("./routes/options");
 const comparisonRouter = require("./routes/comparison")
+const configurationRouter = require("./routes/configuration")
 ///////////////////////////////////
 const app = express();
 useMiddleware(app);
@@ -19,6 +20,7 @@ app.use("/configurator", configuratorRouter);
 app.use("/", indexRouter);
 app.use("/options", optionsRouter);
 app.use("/comparison", comparisonRouter)
+app.use("/configuration", configurationRouter)
 ////////////////////////////////////
 useErrorHandlers(app);
 
