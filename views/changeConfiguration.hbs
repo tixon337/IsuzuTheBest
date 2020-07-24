@@ -61,25 +61,25 @@
   <div>
      <label><h4>Текущее колличество мест</h4>{{data.configuration.numberofseats}}</label>
     <div>заменить на</div>
-    <input type="text" name="numberofseats" required/>
+    <input type="text" name="numberofseats" pattern="[0-9]{,3}" required/>
   </div>
 
   <div>
       <label><h4>Текущий дорожный просвет</h4>{{data.configuration.groundclearance}}</label>
     <div>заменить на</div>
-    <input type="text" name="groundclearance" required/>
+    <input type="text" name="groundclearance" pattern="[0-9]{,3}" required/>
   </div>
 
   <div>
       <label><h4>Текущаяя грузоподъемность</h4>{{data.configuration.carrying}}</label>
     <div>заменить на</div>
-    <input type="text" name="carrying" required/>
+    <input type="text" name="carrying" pattern="[0-9]{,6}" required/>
   </div>
 
   <div>
       <label><h4>Текущаяя стоимость</h4>{{data.configuration.price}}</label>
     <div>заменить на</div>
-    <input type="text" name="price" required/>
+    <input type="text" name="price" pattern="[0-9]{,15}" required/>
   </div>
 
   <div>
