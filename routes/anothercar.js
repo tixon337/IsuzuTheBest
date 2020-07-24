@@ -5,7 +5,7 @@ const {
   TransmissionModel,
   ColorModel,
   ConfigurationModel,
-  СompetitorsModel,
+  СompetitorsssModel,
 } = require("../DataBase/Database.js");
 const router = express.Router();
 
@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  await СompetitorsModel.create({
+  await СompetitorsssModel.create({
     name: req.body.name,
     engine: req.body.engine,
     carcass: req.body.carcass,
@@ -48,7 +48,7 @@ router.post("/change", async (req, res) => {
 
 router.post("/changed", async (req, res) => {
   console.log(req.body);
-  await СompetitorsModel.findOneAndUpdate(
+  await СompetitorsssModel.findOneAndUpdate(
     {
       name: req.body.competitors,
     },
@@ -70,12 +70,12 @@ router.post("/changed", async (req, res) => {
 });
 
 router.get("/delete", async (req, res) => {
-  let competitors = await СompetitorsModel.find();
+  let competitors = await СompetitorsssModel.find();
   res.render("deleteCompetitors", { competitors });
 });
 
 router.post("/delete", async (req, res) => {
-  await СompetitorsModel.findOneAndDelete({ name: req.body.competitors });
+  await СompetitorsssModel.findOneAndDelete({ name: req.body.competitors });
   res.redirect("/admin");
 });
 
