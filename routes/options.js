@@ -127,50 +127,58 @@ router.post("/ch", async (req, res) => {
 router.post("/changeoptions", async (req, res) => {
   console.log(req.body);
   if (req.body.color) {
-    await ColorModel.updateOne(
+    await ColorModel.findOneAndUpdate(
       { name: req.body.colorOld },
       {
-        name: req.body.color,
-        urlimage: req.body.urlImage,
-        creator: req.session.user._id,
-        updated_at: Date.now(),
+        $set: {
+          name: req.body.color,
+          urlimage: req.body.urlImage,
+          creator: req.session.user._id,
+          updated_at: Date.now(),
+        },
       }
     );
   }
   if (req.body.engineName) {
-    await EngineModel.updateOne(
+    await EngineModel.findOneAndUpdate(
       { name: req.body.engineOldName },
       {
-        name: req.body.engineName,
-        volume: req.body.engineVolume,
-        enginePistons: req.body.engineCount,
-        power: req.body.enginePower,
-        type: req.body.engineType,
-        creator: req.session.user._id,
-        updated_at: Date.now(),
+        $set: {
+          name: req.body.engineName,
+          volume: req.body.engineVolume,
+          enginePistons: req.body.engineCount,
+          power: req.body.enginePower,
+          type: req.body.engineType,
+          creator: req.session.user._id,
+          updated_at: Date.now(),
+        },
       }
     );
   }
   if (req.body.carcassName) {
-    await CarcassModel.updateOne(
+    await CarcassModel.findOneAndUpdate(
       { name: req.body.carcassOldName },
       {
-        name: req.body.carcassName,
-        type: req.body.carcassType,
-        creator: req.session.user._id,
-        updated_at: Date.now(),
+        $set: {
+          name: req.body.carcassName,
+          type: req.body.carcassType,
+          creator: req.session.user._id,
+          updated_at: Date.now(),
+        },
       }
     );
   }
   if (req.body.transName) {
-    await TransmissionModel.updateOne(
+    await TransmissionModel.findOneAndUpdate(
       { name: req.body.transOldName },
       {
-        name: req.body.transName,
-        type: req.body.transType,
-        gearstages: req.body.transCount,
-        creator: req.session.user._id,
-        updated_at: Date.now(),
+        $set: {
+          name: req.body.transName,
+          type: req.body.transType,
+          gearstages: req.body.transCount,
+          creator: req.session.user._id,
+          updated_at: Date.now(),
+        },
       }
     );
   }
