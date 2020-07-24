@@ -65,7 +65,7 @@ router.post("/addoptions", async (req, res) => {
   }
   if (req.body.engineName) {
     await EngineModel.create({
-      name: req.body.color,
+      name: req.body.engineName,
       volume: req.body.engineVolume,
       enginePistons: req.body.engineCount,
       power: req.body.enginePower,
@@ -91,12 +91,140 @@ router.post("/addoptions", async (req, res) => {
   res.redirect("/admin");
 });
 
-router.put("/", (req, res) => {
+router.get("/ch", (req, res) => {
   res.render("changeVariantOpt");
 });
 
-router.delete("/", (req, res) => {
+router.post("/ch", async (req, res) => {
+  console.log(req.body);
+  const engine = await EngineModel.find();
+  const carcass = await CarcassModel.find();
+  const transmission = await TransmissionModel.find();
+  const color = await ColorModel.find();
+  const configuration = await ConfigurationModel.find();
+  switch (req.body.options) {
+    case "carcass":
+      res.render("changeOptions", { carcass });
+      break;
+
+    case "color":
+      res.render("changeOptions", { color });
+      break;
+
+    case "engine":
+      res.render("changeOptions", { engine });
+      break;
+
+    case "transmission":
+      res.render("changeOptions", { transmission });
+      break;
+
+    default:
+      break;
+  }
+});
+
+router.post("/changeoptions", async (req, res) => {
+  console.log(req.body);
+  if (req.body.color) {
+    await ColorModel.updateOne(
+      { name: req.body.colorOld },
+      {
+        name: req.body.color,
+        urlimage: req.body.urlImage,
+        creator: req.session.user._id,
+        updated_at: Date.now(),
+      }
+    );
+  }
+  if (req.body.engineName) {
+    await EngineModel.updateOne(
+      { name: req.body.engineOldName },
+      {
+        name: req.body.engineName,
+        volume: req.body.engineVolume,
+        enginePistons: req.body.engineCount,
+        power: req.body.enginePower,
+        type: req.body.engineType,
+        creator: req.session.user._id,
+        updated_at: Date.now(),
+      }
+    );
+  }
+  if (req.body.carcassName) {
+    await CarcassModel.updateOne(
+      { name: req.body.carcassOldName },
+      {
+        name: req.body.carcassName,
+        type: req.body.carcassType,
+        creator: req.session.user._id,
+        updated_at: Date.now(),
+      }
+    );
+  }
+  if (req.body.transName) {
+    await TransmissionModel.updateOne(
+      { name: req.body.transOldName },
+      {
+        name: req.body.transName,
+        type: req.body.transType,
+        gearstages: req.body.transCount,
+        creator: req.session.user._id,
+        updated_at: Date.now(),
+      }
+    );
+  }
+  res.redirect("/admin");
+});
+
+router.get("/del", (req, res) => {
   res.render("deleteVariantOpt");
+});
+
+router.post("/del", async (req, res) => {
+  console.log(req.body);
+  const engine = await EngineModel.find();
+  const carcass = await CarcassModel.find();
+  const transmission = await TransmissionModel.find();
+  const color = await ColorModel.find();
+  const configuration = await ConfigurationModel.find();
+  switch (req.body.options) {
+    case "carcass":
+      res.render("deleteOptions", { carcass });
+      break;
+
+    case "color":
+      res.render("deleteOptions", { color });
+      break;
+
+    case "engine":
+      res.render("deleteOptions", { engine });
+      break;
+
+    case "transmission":
+      res.render("deleteOptions", { transmission });
+      break;
+
+    default:
+      break;
+  }
+});
+
+router.post("/deleteoptions", async (req, res) => {
+  console.log(req.body);
+  if (req.body.color) {
+    await ColorModel.deleteOne({ name: req.body.colorOld });
+  }
+  if (req.body.engineName) {
+    await EngineModel.deleteOne({ name: req.body.engineOldName });
+  }
+  if (req.body.carcassName) {
+    await CarcassModel.deleteOne({ name: req.body.carcassOldName });
+  }
+  if (req.body.transName) {
+    await TransmissionModel.deleteOne({ name: req.body.transOldName });
+  }
+  res.redirect("/admin");
 });
 
 module.exports = router;

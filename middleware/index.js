@@ -5,7 +5,7 @@ module.exports = function (app) {
   const session = require("express-session");
   const path = require("path");
   const FileStore = require("session-file-store")(session);
-  const { cookiesCleaner } = require("./auth"); /// 
+  const { cookiesCleaner } = require("./auth"); ///
   const dbConnection = require("../DataBase/Database");
   // const app = require("../appNew");
 
@@ -24,7 +24,7 @@ module.exports = function (app) {
       resave: false,
       saveUninitialized: false,
       cookie: {
-        expires: 600000,
+        expires: 60000000,
       },
     })
   );
