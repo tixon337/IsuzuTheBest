@@ -1,6 +1,9 @@
 const express = require('express');
 const useMiddleware = require('./middleware');
 const useErrorHandlers = require("./middleware/error-handlers");
+const dotenv = require("dotenv");
+dotenv.config();
+
 // ________routes
 const adminRouter = require("./routes/admin");
 const anothercarRouter = require("./routes/anothercar");
@@ -24,7 +27,7 @@ app.use("/configuration", configurationRouter)
 ////////////////////////////////////
 useErrorHandlers(app);
 
-app.listen(3000, console.log('!!!!!!!!!!!!!!!!!!!!!!!!!'));
+app.listen(process.env.PORT, console.log('!!!!!!!!!!!!!!!!!!!!!!!!!'));
 module.exports = app;
 
 

@@ -1,8 +1,11 @@
 const mongoose = require("mongoose");
 const fake = require("faker");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const connectionAddress =
-  "mongodb+srv://isuzu:isuzu@isuzudata.3oevy.mongodb.net/IsuzuData?retryWrites=true&w=majority";
+  `mongodb+srv://${process.env.DATABASE_LOGIN}:${process.env.DATABASE_PASSWORD}@isuzudata.3oevy.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`;
+  
 try {
   mongoose.connect(connectionAddress, {
   useNewUrlParser: true,

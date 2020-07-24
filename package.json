@@ -20,6 +20,7 @@
   "homepage": "https://github.com/tixon337/IsuzuTheBest#readme",
   "dependencies": {
     "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "faker": "^4.1.0",

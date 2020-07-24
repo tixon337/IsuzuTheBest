@@ -43,13 +43,12 @@ router.post("/add", sessionChecker, async function (req, res) {
     carrying: config.carrying, 
     price: config.price, 
     creator: req.session.user._id, })
-  res.redirect('/admin');
+  res.redirect('/success');
 });
 
 router.get("/change", sessionChecker, async function (req, res) {
   try {
     const configurations = await ConfigurationModel.find();
-    // console.log(configurations);
     res.render("chooseConfiguration", {configurations});
   } catch (error) {
     console.log(error);
@@ -84,9 +83,24 @@ router.post("/changeparams", sessionChecker, async function (req, res) {
 
   await ConfigurationModel.findOneAndUpdate({name},{$set:{engine,carcass,transmission,color,flag,numberofseats,groundclearance,carrying,price,}})
 
-  res.redirect('/admin');
+  res.redirect('/success');
 });
 
+
+router.get("/del", sessionChecker, async function (req, res) {
+  try {
+    const configurations = await ConfigurationModel.find();
+    res.render("deleteConfiguration", {configurations});
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+router.post("/del", sessionChecker, async function (req, res) {
+  console.log(req.body.name)
+   const config = await ConfigurationModel.deleteOne({name:req.body.name})
+    res.redirect('/success');
+});
 
 module.exports = router;
 

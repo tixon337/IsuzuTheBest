@@ -55,22 +55,22 @@
 
   <div>
     <label>Количество мест:</label>
-    <input type="text" name="numberofseats" required/>
+    <input type="text" name="numberofseats" pattern="/[0-9]{,3}/" required/>
   </div>
 
   <div>
     <label>Дорожный просвет:</label>
-    <input type="text" name="groundclearance" required/>
+    <input type="text" name="groundclearance" pattern="[0-9]{,3}" required/>
   </div>
 
   <div>
     <label>Грузоподьемность:</label>
-    <input type="text" name="carrying" required/>
+    <input type="text" name="carrying" pattern="[0-9]{,6}" required/>
   </div>
 
   <div>
     <label>Стоимость:</label>
-    <input type="text" name="price" required/>
+    <input type="text" name="price" pattern="[0-9]{,15}" required/>
   </div>
 
   <div>
