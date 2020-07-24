@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+<nav class="navbar navbar-dark bg-dark">
+  <a href="/" class="navbar-brand">Главная</a>
+  <form class="form-inline">
+    <button class="btn btn-danger" type="button"><a class="config-login" href="/login">Войти</a></button>
+  </form>
+</nav>
 <body>
   <div><h5>Результаты сравнения</h5></div>
 <div class="card-group"> 
@@ -17,7 +24,7 @@
       <p class="card-text">Цвет</p>
       <p class="card-text">Стоимость</p>
     </div>
-  </div>   --}}
+  </div>
   {{#each compet}}
   <div class="card">
     <div class="card-body">
