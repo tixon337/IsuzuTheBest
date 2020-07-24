@@ -131,6 +131,7 @@ input[type="text"]:placeholder {
 .vertical-menu {
   margin: 15px;
   width: 250px;
+  
 }
 
 .vertical-menu a {
@@ -139,6 +140,7 @@ input[type="text"]:placeholder {
   display: block;
   padding: 12px;
   text-decoration: none;
+  border-radius: 15px;
 }
 
 .vertical-menu a:hover {
@@ -161,9 +163,51 @@ input[type="text"]:placeholder {
   width: 100%;
 }
 
+
+.input{
+  height: 40px;
+  margin: 10px;
+  background-color: rgb(230, 231, 230);
+  border-radius: 5px;
+}
+
+.input2{
+  margin: 10px;
+  background-color: rgb(93, 187, 143);
+  border-radius: 5px;
+  border: 1px solid;
+}
+
+.card-text2{
+  height: 60px;
+  margin: 10px;
+  background-color: rgb(241, 238, 238);
+  border-radius: 5px;
+  padding-left:  12px;
+  padding-right:  12px;
+  text-align: center;
+}
+
+.card-title2{
+  height: 100px;
+  margin: 10px;
+  background-color: rgb(209, 208, 208);
+  border-radius: 5px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+
+/* .main-part {
+  background-color: #181818;
+  height: 700px;
+
 .main-part {
   background-image: url("./pictures/background.jpg");
   height: 800px;
+
 }
 .main-page-white {
   background-color: lightgray;

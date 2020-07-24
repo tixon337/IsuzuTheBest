@@ -1,8 +1,8 @@
 <h5>Выберите пользователя</h5>
 
 <div>
-  <form action="/admin/delete" method="post"  value={{this.login}}>
-  <select name='user'>
+  <form "vertical-menu centre" action="/admin/delete" method="post"  value={{this.login}}>
+  <select class="input" name='user'>
   {{#each users}}
     <option value="{{this.login}}">{{this.name}}</option>
   {{/each}}
