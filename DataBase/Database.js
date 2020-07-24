@@ -8,13 +8,13 @@ const connectionAddress =
   
 try {
   mongoose.connect(connectionAddress, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
 } catch (error) {
   console.log(error);
 }
-  
+
 mongoose.pluralize(null);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "Ошибка соединения с MongoDB"));
@@ -133,10 +133,10 @@ const Configuration = new mongoose.Schema({
 
 const Сompetitors = new mongoose.Schema({
   name: String,
-  engine: Engine,
-  carcass: Carcass,
-  transmission: Transmission,
-  color: Color,
+  engine: String,
+  carcass: String,
+  transmission: String,
+  color: String,
   numberofseats: String,
   groundclearance: String,
   carrying: Number,
