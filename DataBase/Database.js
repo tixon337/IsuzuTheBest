@@ -3,9 +3,8 @@ const fake = require("faker");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const connectionAddress =
-  `mongodb+srv://${process.env.DATABASE_LOGIN}:${process.env.DATABASE_PASSWORD}@isuzudata.3oevy.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`;
-  
+const connectionAddress = `mongodb+srv://${process.env.DATABASE_LOGIN}:${process.env.DATABASE_PASSWORD}@isuzudata.3oevy.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`;
+
 try {
   mongoose.connect(connectionAddress, {
     useNewUrlParser: true,
@@ -133,6 +132,25 @@ const Configuration = new mongoose.Schema({
 
 const Сompetitors = new mongoose.Schema({
   name: String,
+  engine: Engine,
+  carcass: Carcass,
+  transmission: Transmission,
+  color: Color,
+  numberofseats: String,
+  groundclearance: String,
+  carrying: Number,
+  price: Number,
+  creator: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "Admins",
+  },
+  created_at: { type: Date, default: Date.now },
+  updated_at: { type: Date, default: Date.now },
+});
+
+const Сompetitorsss = new mongoose.Schema({
+  name: String,
   engine: String,
   carcass: String,
   transmission: String,
@@ -157,6 +175,7 @@ const TransmissionModel = mongoose.model("Transmission", Transmission);
 const ColorModel = mongoose.model("Color", Color);
 const ConfigurationModel = mongoose.model("Configuration", Configuration);
 const СompetitorsModel = mongoose.model("Сompetitors", Сompetitors);
+const СompetitorsssModel = mongoose.model("Сompetitorsss", Сompetitorsss);
 
 async function addAdmin() {
   await AdminsModel.create({
@@ -254,4 +273,5 @@ module.exports = {
   ColorModel,
   ConfigurationModel,
   СompetitorsModel,
+  СompetitorsssModel,
 };
