@@ -3,10 +3,15 @@ const fake = require("faker");
 
 const connectionAddress =
   "mongodb+srv://isuzu:isuzu@isuzudata.3oevy.mongodb.net/IsuzuData?retryWrites=true&w=majority";
-mongoose.connect(connectionAddress, {
+try {
+  mongoose.connect(connectionAddress, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+} catch (error) {
+  console.log(error);
+}
+  
 mongoose.pluralize(null);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "Ошибка соединения с MongoDB"));

@@ -16,9 +16,9 @@ router.get("/", async function (req, res) {
     const carcass = await CarcassModel.find();
     const transmission = await TransmissionModel.find();
     const color = await ColorModel.find();
-    const configuration = await ConfigurationModel.find();
+    const configuration = await ConfigurationModel.find({ flag: true });    
     const data = { engine, carcass, transmission, color, configuration };
-
+    console.log(data.color);
     res.render("configurator", data);
   } catch (error) {
     console.log(error);
@@ -27,14 +27,16 @@ router.get("/", async function (req, res) {
 
 router.post("/getSum", async function (req, res) {
   try {
+    console.log(req.body);
     const configuration = await ConfigurationModel.find({
+      'name': req.body.name,
       "engine.name": req.body.engine,
       "carcass.name": req.body.carcass,
       'transmission.name': req.body.transmission,
-      'color.name': req.body.color,
     });
     console.log(configuration.length);
-    res.json({ price: configuration[0].price });
+    console.log(configuration[0].color.urlimage );
+    res.json({ price: configuration[0].price, image: configuration[0].color.urlimage });
   } catch (error) {
     res.json({ error: "Такой комплектации не существует" });
   }
