@@ -1,19 +1,21 @@
 {{#if engine}}
-<form action="/options/addoptions" method="POST">
-  <option name="carcass">Двигатель</option>
-  <input type="text" placeholder="Название" name="engineName">
-  <input type="text" placeholder="Объем" name="engineVolume">
-  <input type="text" placeholder="Поршни" name="enginePower">
-  <input type="text" placeholder="Тип двигателя" name="engineType">
-  <button class="add" type="submit">Добавить</button>
-</form>
+<div class="wrapper fadeInDown">
+  <form action="/options/addoptions" method="POST">
+    <option name="carcass">Двигатель</option>
+    <input type="text" class="fadeIn third" placeholder="Название" name="engineName">
+    <input type="text" placeholder="Объем" name="engineVolume" class="fadeIn third">
+    <input type="text" placeholder="Поршни" name="enginePower" class="fadeIn third">
+    <input type="text" placeholder="Тип двигателя" name="engineType" class="fadeIn third">
+    <button class="add" type="submit">Добавить</button>
+  </form>
+</div>
 {{/if}}
 
 {{#if carcass}}
 <form action="/options/addoptions" method="POST">
   <option name="carcass">Каркас</option>
-  <input type="text" placeholder="Название" name="carcassName">
-  <input type="text" placeholder="Тип каркаса" name="carcassType">
+  <input type="text" placeholder="Название" name="carcassName" class="fadeIn third">
+  <input type="text" placeholder="Тип каркаса" name="carcassType" class="fadeIn third">
   <button class="add" type="submit">Добавить</button>
 </form>
 {{/if}}
@@ -21,9 +23,9 @@
 {{#if transmission}}
 <form action="/options/addoptions" method="POST">
   <option name="transmission">Трансмиссия</option>
-  <input type="text" placeholder="Название" name="transName">
-  <input type="text" placeholder="Количество передач" name="transCount">
-  <input type="text" placeholder="Тип коробки" name="transType">
+  <input type="text" placeholder="Название" name="transName" class="fadeIn third">
+  <input type="text" placeholder="Количество передач" name="transCount" class="fadeIn third">
+  <input type="text" placeholder="Тип коробки" name="transType" class="fadeIn third">
   <button class="add" type="submit">Добавить</button>
 </form>
 {{/if}}
@@ -31,8 +33,8 @@
 {{#if color}}
 <form action="/options/addoptions" method="POST">
   <option name="color">Цвет</option>
-  <input type="text" placeholder="Название" name="color">
-  <input type="text" placeholder="Ссылка на фотографию" name="urlImage">
+  <input type="text" placeholder="Название" name="color" class="fadeIn third">
+  <input type="text" placeholder="Ссылка на фотографию" name="urlImage" class="fadeIn third">
   <button class="add" type="submit">Добавить</button>
 </form>
 {{/if}}
