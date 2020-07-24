@@ -4,39 +4,39 @@
   <a href="/">Домашняя страница</a>
 
   <div class="config-form">
-    <form id='configForm' action="/comparison" method="POST">
+    <form class="vertical-menu centre"  id='configForm' action="/comparison" method="POST">
       <div>Выберите двигатель</div>
-      <select class='select' name="engine" id="engine">
+      <select class="input" name="engine" id="engine">
         {{#each engine}}
-        <option value="{{name}}">{{name}}</option>
+        <option  value="{{name}}">{{name}}</option>
         {{/each}}
       </select>
       <div>Выберите каркас</div>
-      <select class='select' name="carcass" id="carcass">
+      <select class="input" name="carcass" id="carcass">
         {{#each carcass}}
         <option value="{{name}}">{{name}}</option>
         {{/each}}
       </select>
       <div>Выберите трансмиссию</div>
-      <select class='select' name="transmission" id="transmission">
+      <select class="input" name="transmission" id="transmission">
         {{#each transmission}}
         <option value="{{name}}">{{name}}</option>
         {{/each}}
       </select>
       <div>Выберите цвет</div>
-      <select class='select' name="color" id="color">
+      <select class="input" name="color" id="color">
         {{#each color}}
         <option value="{{name}}">{{name}}</option>
         {{/each}}
       </select>
       {{!-- <a href="/comparison">Сравнить с другими предложениями</a> --}}
       <br><br>
-      <button id="buttonSum">Узнать стоимость комплектации</button>
+      <button class="input2" id="buttonSum">Узнать стоимость комплектации</button>
       <br>
       <br>
-      <button type="submit" id="buttonCompare">Сравнить с другими предложениями</button>
-      <input hidden=true type="text" id="total" name= "price" value='1834558'></input>
-      <input hidden=true type="text" id="total" name= "name" value="Isuzu Dmax"></input>
+      <button class="input2" type="submit" id="buttonCompare">Сравнить с другими предложениями</button>
+      <input class="input" hidden=true type="text" id="total" name= "price" value='1834558'></input>
+      <input class="input" hidden=true type="text" id="total" name= "name" value="Isuzu Dmax"></input>
       <br>
       <br>
       <div class="sum"> Стоимость: 1834558 руб. </div>

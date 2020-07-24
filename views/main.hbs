@@ -20,11 +20,11 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">{{this.name}}</h5>
-      <p class="card-text">{{this.engine.name}} {{this.engine.value}} {{this.engine.power}}
+      <p class="card-text"><h6>Двигатель: </h6> {{this.engine.name}} {{this.engine.value}} {{this.engine.power}}
         {{this.engine.enginePistons}}</p>
-      <p class="card-text">{{this.carcass.name}} {{this.carcass.type}}</p>
-      <p class="card-text">{{this.transmission.name}} {{this.transmission.type}} {{this.transmission.gearstages}}</p>
-      <p class="card-text">{{this.color.name}}</p>
+      <p class="card-text"><h6>Форма кузова:</h6>{{this.carcass.name}} {{this.carcass.type}}</p>
+      <p class="card-text"><h6>Коробка передач:</h6>{{this.transmission.name}} {{this.transmission.type}} {{this.transmission.gearstages}}</p>
+      <p class="card-text"><h6>Цвет:</h6>{{this.color.name}}</p>
     </div>
   </div>
   {{/each}}
