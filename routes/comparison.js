@@ -8,7 +8,6 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  console.log("nhfnhfnfhf")
   try {
     const competitors = await СompetitorsModel.find();
 

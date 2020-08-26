@@ -19,7 +19,6 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const data = {};
-    console.log(data.engine);
     res.render("addVariantOpt");
   } catch (error) {
     console.log(error);
@@ -27,7 +26,6 @@ router.post("/", async (req, res) => {
 });
 
 router.post("/add", async (req, res) => {
-  console.log(req.body);
   const engine = await EngineModel.find();
   const carcass = await CarcassModel.find();
   const transmission = await TransmissionModel.find();
@@ -56,7 +54,6 @@ router.post("/add", async (req, res) => {
 });
 
 router.post("/addoptions", async (req, res) => {
-  console.log(req.body);
   if (req.body.color) {
     await ColorModel.create({
       name: req.body.color,
@@ -96,7 +93,6 @@ router.get("/ch", (req, res) => {
 });
 
 router.post("/ch", async (req, res) => {
-  console.log(req.body);
   const engine = await EngineModel.find();
   const carcass = await CarcassModel.find();
   const transmission = await TransmissionModel.find();
@@ -125,7 +121,6 @@ router.post("/ch", async (req, res) => {
 });
 
 router.post("/changeoptions", async (req, res) => {
-  console.log(req.body);
   if (req.body.color) {
     await ColorModel.findOneAndUpdate(
       { name: req.body.colorOld },
@@ -190,7 +185,6 @@ router.get("/del", (req, res) => {
 });
 
 router.post("/del", async (req, res) => {
-  console.log(req.body);
   const engine = await EngineModel.find();
   const carcass = await CarcassModel.find();
   const transmission = await TransmissionModel.find();
@@ -219,7 +213,6 @@ router.post("/del", async (req, res) => {
 });
 
 router.post("/deleteoptions", async (req, res) => {
-  console.log(req.body);
   if (req.body.color) {
     await ColorModel.deleteOne({ name: req.body.colorOld });
   }

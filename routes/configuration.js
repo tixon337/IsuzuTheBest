@@ -97,7 +97,6 @@ router.get("/del", sessionChecker, async function (req, res) {
 });
 
 router.post("/del", sessionChecker, async function (req, res) {
-  console.log(req.body.name)
    const config = await ConfigurationModel.deleteOne({name:req.body.name})
     res.redirect('/success');
 });

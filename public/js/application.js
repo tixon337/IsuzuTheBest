@@ -35,7 +35,6 @@ let color = selected[3].options[selected[3].selectedIndex].text;
     let responseObj = await response.json();
 
     sum.innerText = `Стоимость: ${responseObj.price} Руб.`;
-    console.log(responseObj);
     smallImage.src = `${responseObj.image}`
 
     document.getElementById("total").value = responseObj.price
@@ -44,20 +43,3 @@ let color = selected[3].options[selected[3].selectedIndex].text;
 
 
 
-// const engineImport = document.getElementById("engine");
-// const carcassImport = document.getElementById("carcass");
-// const transmittionImport = document.getElementById("transmission");
-// const colorImport = document.getElementById("color");
-// let engine = engineImport.options[engineImport.selectedIndex].text;
-// let carcass = carcassImport.options[carcassImport.selectedIndex].text;
-// let transmittion = transmittionImport.options[transmittionImport.selectedIndex].text;
-// let color = colorImport.options[colorImport.selectedIndex].text;
-// sum.innerText = `${engine + carcass + transmittion + color}`;
-
-
-
-
-// document.getElementById("addoption").addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   console.log(event);
-// });

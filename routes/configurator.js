@@ -34,7 +34,6 @@ router.post("/getSum", async function (req, res) {
       'transmission.name': req.body.transmission,
     });
     
-    console.log(configuration);
     if(!configuration.price) {
 
     }    

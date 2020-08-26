@@ -26,8 +26,6 @@ router.post('/login', async function (req, res) {
   const needAdmin = trueAdmin.filter(adm => adm.login == user.username);
   if(needAdmin[0]){
     if (user.username === needAdmin[0].login && user.password === needAdmin[0].password) {
-      // console.log('Вы авторизованы');
-      console.log(needAdmin[0])
       req.session.user = needAdmin[0];
       res.redirect('/admin');
   }

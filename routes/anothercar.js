@@ -38,16 +38,13 @@ router.get("/change", async (req, res) => {
 });
 
 router.post("/change", async (req, res) => {
-  console.log(req.body);
   let competitors = await СompetitorsModel.findOne({
     name: req.body.competitors,
   });
-  console.log(competitors);
   res.render("changeCompare", { competitors });
 });
 
 router.post("/changed", async (req, res) => {
-  console.log(req.body);
   await СompetitorsssModel.findOneAndUpdate(
     {
       name: req.body.competitors,

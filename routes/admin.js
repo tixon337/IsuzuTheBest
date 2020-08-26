@@ -6,7 +6,6 @@ const { AdminsModel } = require('../DataBase/Database.js');
 
 
 router.get('/', sessionChecker, (req, res) => {
-  // console.log(req.session.user)
   res.render('admin', { superadmin: req.session.user.superadmin })
   
 })
